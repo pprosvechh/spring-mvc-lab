@@ -44,7 +44,7 @@
     </div>
 </nav>
 <h1>Форма</h1>
-<form action="#" th:action="@{/sendEmail}" th:object="${emailForm}" method="post">
+<form action="page2.html?" th:action="@{/sendEmail}" th:object="${emailForm}" method="post">
     <p style="color:red" th:text="${error}"></p>
     <table>
         <tr>
@@ -60,7 +60,7 @@
             <td><input th:field="*{message}"style="width:300px; height:100px"></td>
         </tr>
     </table>
-    <input type="submit" value="Отправить">
+    <input type="submit" value="Отправить" href="page2">
     <input type="reset" value="Очистить">
 </form>
 </body>
