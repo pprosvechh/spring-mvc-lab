@@ -1,6 +1,6 @@
 package email.model;
 
-public class EmailForm {
+public class PageForm {
     private String subject;
     private String to;
     private String message;
@@ -31,7 +31,7 @@ public class EmailForm {
 
     @Override
     public String toString() {
-        return "EmailForm{" +
+        return "PageForm{" +
                 "subject='" + subject + '\'' +
                 ", to='" + to + '\'' +
                 ", message='" + message + '\'' +
