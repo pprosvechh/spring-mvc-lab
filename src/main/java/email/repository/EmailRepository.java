@@ -1,11 +1,10 @@
 package email.repository;
 
-import email.model.Email;
-import email.model.PageForm;
+import email.model.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmailRepository extends JpaRepository<Email, Integer> {
+public interface EmailRepository extends JpaRepository<Page, Integer> {
 }
 

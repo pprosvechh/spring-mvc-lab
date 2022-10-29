@@ -5,16 +5,16 @@ import email.core.BaseEntity;
 import javax.persistence.Entity;
 
 @Entity
-public class Email extends BaseEntity {
+public class Page extends BaseEntity {
     private String to;
     private String subject;
     private String message;
 
-    public Email() {
+    public Page() {
 
     }
 
-    public Email(String to, String subject, String message) {
+    public Page(String to, String subject, String message) {
         this.to = to;
         this.subject = subject;
         this.message = message;

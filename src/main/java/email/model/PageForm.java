@@ -33,10 +33,6 @@ public class PageForm extends BaseEntity {
 
     @Override
     public String toString() {
-        return "PageForm{" +
-                "subject='" + subject + '\'' +
-                ", to='" + to + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+        return "EmailForm{" + "subject='" + subject + '\'' + ", to='" + to + '\'' + ", message='" + message + '\'' + '}';
     }
 }

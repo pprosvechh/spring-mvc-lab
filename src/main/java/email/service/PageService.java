@@ -1,28 +1,28 @@
 package email.service;
 
-import email.model.Email;
+import email.model.Page;
 import email.repository.EmailRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EmailService {
+public class PageService {
     private final EmailRepository emailRepository;
 
-    public EmailService(EmailRepository emailRepository) {
+    public PageService(EmailRepository emailRepository) {
         this.emailRepository = emailRepository;
     }
 
-    public List<Email> getAllEmails() {
+    public List<Page> getAllPages() {
         return emailRepository.findAll();
     }
 
-    public Email save(Email email) {
+    public Page save(Page email) {
         return emailRepository.save(email);
     }
 
-    public Email getEmailById(Integer id) {
+    public Page getPageById(Integer id) {
         return emailRepository.getOne(id);
     }
 

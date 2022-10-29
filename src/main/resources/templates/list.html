@@ -1,100 +1,96 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Список записей в БД</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Список записей в БД</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
 <!-- компонент меню-->
 <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Название web-приложения</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/list">Список отправленных сообщений</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ajax">Динамическая страница</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
-            Выпадающее меню
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Пункт 1</a></li>
-            <li><a class="dropdown-item" href="#">Пункт 3</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Пункт 3</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Недоступно</a>
-        </li>
-      </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Медицинское учреждение</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="list.html">Список записей</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ajax.html">Записи</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Филиалы
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Больница</a></li>
+                        <li><a class="dropdown-item" href="#">Госпиталь</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Недоступно</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 col-sm-12">
-      <h2>Список записей в БД:</h2>
-      <div class="row">
-        <div class="col-md-4" style="font-weight: bold">
-          Кому
-        </div>
-        <div class="col-md-4" style="font-weight: bold">
-          Тема
-        </div>
-        <div class="col-md-4" style="font-weight: bold">
-          Сообщение
-        </div>
-      </div>
-      <div class="row" th:each="email: ${emails}">
-        <div class="col-md-4" th:text="${email.to}"/>
-        <div class="col-md-4" th:text="${email.subject}"/>
-        <div class="col-md-4" th:text="${email.message}"/>
-      </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-sm-12">
+            <h2>Список записей в БД:</h2>
+            <div class="row">
+                <div class="col-md-4" style="font-weight: bold">
+                    Кому
+                </div>
+                <div class="col-md-4" style="font-weight: bold">
+                    Тема
+                </div>
+                <div class="col-md-4" style="font-weight: bold">
+                    Сообщение
+                </div>
+            </div>
+            <div class="row" th:each="email: ${emails}">
+                <div class="col-md-4" th:text="${email.to}"/>
+                <div class="col-md-4" th:text="${email.subject}"/>
+                <div class="col-md-4" th:text="${email.message}"/>
+            </div>
 
-      <!--<table class="table table-striped">
-          <thead class="thead-dark">
-          <tr>
-              <th scope="col">Кому</th>
-              <th scope="col">Тема</th>
-              <th scope="col">Сообщение</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:each="email: ${emails}">
-              <td th:text="${email.to}">
-              </td>
-              <td th:text="${email.subject}">
-              </td>
-              <td th:text="${email.message}">
-              </td>
-          </tr>
-          </tbody>
-      </table>-->
-      <a class="btn btn-primary" href="/">Отправить другое сообщение</a>
-      <!--            <img src="img/logo.png"/>-->
+            <!--<table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Кому</th>
+                    <th scope="col">Тема</th>
+                    <th scope="col">Сообщение</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="email: ${emails}">
+                    <td th:text="${email.to}">
+                    </td>
+                    <td th:text="${email.subject}">
+                    </td>
+                    <td th:text="${email.message}">
+                    </td>
+                </tr>
+                </tbody>
+            </table>-->
+            <a class="btn btn-primary" href="/">Новая запись</a>
+            <!--            <img src="img/logo.png"/>-->
+        </div>
     </div>
-  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
