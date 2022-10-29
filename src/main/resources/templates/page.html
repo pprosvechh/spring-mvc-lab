@@ -19,7 +19,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page2">Домой</a>
+                    <a class="nav-link" href="page2.html?">Домой</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@
     </div>
 </nav>
 <h1>Форма</h1>
-<form action="page2.html?" th:action="@{/sendEmail}" th:object="${emailForm}" method="post">
+<form action="page2.html?" th:action="@{/sendPageForm}" th:object="${pageForm}" method="post">
     <p style="color:red" th:text="${error}"></p>
     <table>
         <tr>
@@ -60,7 +60,7 @@
             <td><input th:field="*{message}"style="width:300px; height:100px"></td>
         </tr>
     </table>
-    <input type="submit" value="Отправить" href="page2">
+    <input type="submit" value="Отправить">
     <input type="reset" value="Очистить">
 </form>
 </body>

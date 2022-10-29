@@ -1,6 +1,8 @@
 package email.model;
 
-public class PageForm {
+import email.core.BaseEntity;
+
+public class PageForm extends BaseEntity {
     private String subject;
     private String to;
     private String message;
